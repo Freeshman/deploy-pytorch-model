@@ -85,7 +85,7 @@ def predict():
 
             # Loop over the results and add them to the list of returned predictions
             for prob, label in zip(results[0][0], results[1][0]):
-                label_name = idx2label[label]
+                label_name = idx2label[label.item()]
                 r = {"label": label_name, "probability": float(prob)}
                 data['predictions'].append(r)
 
